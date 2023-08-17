@@ -1,0 +1,9 @@
+package aula01;
+
+public class CarroTeste {
+
+	public static void main(String[] args) {
+		//Nome da classe: Carro
+		Carro carro1 = new Carro();
+	}
+}

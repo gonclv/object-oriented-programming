@@ -1,0 +1,40 @@
+package aula01;
+
+public class Carro {
+
+	String modelo;
+	String marca;
+	int ano;
+	String placa;
+	String cor;
+	
+	public Carro(String mod, String mar, int an, String pla, String co) {
+		modelo = mod;
+		marca = mar;
+		ano = an;
+		placa = pla;
+		cor = co;
+	}
+	
+	public void ligar() {
+		
+	}
+	
+	public void desligar() {
+		
+	}
+
+	public void acelerar() {
+		
+	}
+
+	public void frear() {
+		
+	}
+
+	@Override
+	public String toString() {
+		return "Carro [modelo=" + modelo + ", marca=" + marca + ", ano=" + ano + ", placa=" + placa + ", cor=" + cor
+				+ "]";
+	}
+}

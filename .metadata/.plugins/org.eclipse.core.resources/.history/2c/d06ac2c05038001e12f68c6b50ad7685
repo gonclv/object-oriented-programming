@@ -1,0 +1,17 @@
+package Aula01.entradadados;
+
+import java.util.Scanner;
+
+public class ExemploEntradaDados {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Informe seu nome:");
+		String nome = input.nextLine();
+		System.out.println("Informe o período:");
+		int periodo = input.nextInt();
+		System.out.println("Informe o coeficiente:");
+		double coeficiente = input.nextDouble();
+	}
+}

@@ -1,0 +1,10 @@
+package Aula01.exercicio;
+
+public class Exercicio {
+
+	String produto1 = "Notebook";
+	String produto2 = "SSD";
+	double precoProduto1 = 3500.00;
+	double precoProduto2 = 250.00;
+	
+}

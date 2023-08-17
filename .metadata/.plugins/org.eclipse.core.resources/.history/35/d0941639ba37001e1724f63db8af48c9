@@ -1,0 +1,27 @@
+package aula01.exercicio;
+
+public class CarroExercicio {
+	String modelo;
+	String marca;
+	int ano;
+	String placa;
+	String cor;
+	double velocidade;
+	boolean ligado = false;
+	
+	public void ligar() {
+		
+	}
+	
+	public void desligar() {
+		
+	}
+
+	public void acelerar() {
+		
+	}
+
+	public void frear() {
+		
+	}
+}

@@ -1,0 +1,8 @@
+package aula01.exercicio;
+
+public class CarroTesteExercicio {
+	public static void main(String[] args) {
+		CarroExercicio carro1 = new CarroExercicio("Civic", "Honda", 2010, "ABC-1234", "Vermelho", true, 10);
+		CarroExercicio carro1 = new CarroExercicio("Fusca", "Wolkswagen", 1989, "DDD-0000", "Azul", false, 0);
+	}
+}

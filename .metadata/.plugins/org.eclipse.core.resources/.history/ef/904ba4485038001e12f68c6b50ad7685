@@ -1,0 +1,10 @@
+package Aula01.entradadados;
+
+import java.util.Scanner;
+
+public class ExemploEntradaDados {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+	}
+}
