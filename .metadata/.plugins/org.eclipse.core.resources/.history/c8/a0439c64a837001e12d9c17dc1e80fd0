@@ -1,9 +1,0 @@
-package Aula01.saidadados;
-
-public class ExemploSaidaDados {
-
-	public static void main(String[] args) {
-		System.out.println("Programação Orientada a Objetos");
-		System.out.println("Universidade Tecnológica Federal do Paraná");
-	}
-}
