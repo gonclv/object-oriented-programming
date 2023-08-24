@@ -30,6 +30,10 @@ public class Carro {
 	public void frear() {
 		
 	}
+	
+	public String getPlaca() {
+		return this.placa;
+	}
 
 	@Override
 	public String toString() {

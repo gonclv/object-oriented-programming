@@ -21,7 +21,9 @@ public class CarroExercicio {
 	}
 	
 	public void ligar() {
-		ligado = true;
+		if(!ligado) {
+			ligado = true;
+		}
 	}
 	
 	public void desligar() {
