@@ -1,4 +1,4 @@
-package aula04.métodos;
+package aula05.metodoconstrutor;
 
 public class Carro {
 
@@ -8,7 +8,25 @@ public class Carro {
 	int ano;
 	String placa;
 	String cor;
-	boolean ligado = false;
+	boolean ligado;
+	
+	//sobrecarga de método construtor
+	public Carro(String placa) {
+		this(null, null, 0, placa, null);
+	}
+	
+	public Carro(String modelo, String marca, int ano) {
+		this(modelo, marca, ano, null, null);
+	}
+	
+	public Carro(String modelo, String marca, int ano, String placa, String cor) {
+		this.modelo = modelo;
+		this.marca = marca;
+		this.ano = ano;
+		this.placa = placa;
+		this.cor = cor;
+		this.ligado = false;
+	}
 	
 	//métodos da classe Carro
 	public void ligar() {
