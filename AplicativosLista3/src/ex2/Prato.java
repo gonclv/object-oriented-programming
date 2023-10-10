@@ -4,11 +4,11 @@ public class Prato {
 
 	private int numero;
 	private String nomePrato;
-	private String tipo; //MUDAR PARA ENUM
+	private TipoPrato tipo;
 	private String ingredientes;
 	private double precoUnitario;
 	
-	public Prato(int numero, String nomePrato, String tipo, String ingredientes, double precoUnitario) {
+	public Prato(int numero, String nomePrato, TipoPrato tipo, String ingredientes, double precoUnitario) {
 		super();
 		this.numero = numero;
 		this.nomePrato = nomePrato;
@@ -23,7 +23,7 @@ public class Prato {
 	public String getNomePrato() {
 		return nomePrato;
 	}
-	public String getTipo() {
+	public TipoPrato getTipo() {
 		return tipo;
 	}
 	public String getIngredientes() {

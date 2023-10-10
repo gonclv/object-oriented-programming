@@ -8,7 +8,22 @@ public class Endereco {
     private String cidade;
     private String UF;
     
-    public void imprimirEndereco() {
-        
-    }
+	public String getLogradouro() {
+		return logradouro;
+	}
+	public int getNumero() {
+		return numero;
+	}
+	public String getBairro() {
+		return bairro;
+	}
+	public int getCep() {
+		return cep;
+	}
+	public String getCidade() {
+		return cidade;
+	}
+	public String getUF() {
+		return UF;
+	}
 }

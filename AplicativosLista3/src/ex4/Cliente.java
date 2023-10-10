@@ -1,14 +1,21 @@
 package ex4;
 
 public abstract class Cliente {
-    private String nome;
-    private String dataNascimento;
-    private int telefone;
-    private Endereco endereco;
+    protected String nome;
+    protected String dataNascimento;
+    protected int telefone;
+    protected Endereco endereco;
     
-    public abstract void imprimirDadosCliente();
-    
-    public String getNome() {
-        return nome;
-    }
+    public Cliente(String nome, String dataNascimento, int telefone, Endereco endereco) {
+		this.nome = nome;
+		this.dataNascimento = dataNascimento;
+		this.telefone = telefone;
+		this.endereco = endereco;
+	}
+
+	public abstract void imprimirDadosCliente();
+
+	public String getNome() {
+		return nome;
+	}
 }

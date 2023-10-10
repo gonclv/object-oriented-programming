@@ -25,12 +25,17 @@ public class Sessao {
 	}
 	
 	public void venderIngressos(int numIngressosVenda) {
-		if(numIngressosVenda <= numIngressos) {
-			numIngressos -= numIngressosVenda;
-			System.out.println("Venda de " + numIngressosVenda + " ingressos realizada com sucesso!");
+		try {
+			if(numIngressosVenda <= numIngressos) {
+				numIngressos -= numIngressosVenda;
+				System.out.println("Venda de " + numIngressosVenda + " ingressos realizada com sucesso!");
+			}
+			else {
+				throw new IngressosInsuficientesException();
+			}
 		}
-		else {
-			System.out.println("Erro - não estão disponíveis ingressos suficientes para esta sessão.");
+		catch (IngressosInsuficientesException iie) {
+			System.out.println(iie.getMessage());
 		}
 	}
 	
@@ -41,7 +46,7 @@ public class Sessao {
 	public void imprimirDados() {
 		System.out.println("Data da sessão: " + data);
 		System.out.println("Horário da sessão: " + horario);
-		System.out.println("Total de ingressos vendidos: " + calcularIngressosVendidos());
+		System.out.println("Total de ingressos vendidos: " + this.calcularIngressosVendidos());
 		System.out.println("Número da sala: " + sala.getNumIdentificacao());
 		System.out.println("Nome do filme: " + filme.getTitulo());
 		System.out.println("Duração do filme: " + filme.getDuracao() + " minutos");

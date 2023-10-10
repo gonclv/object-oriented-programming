@@ -23,9 +23,9 @@ public class Filme {
         this.valorMulta = 0;
     }
     
-    public void realizarLocacao(Cliente cliente, int dia) {
+    public void realizarLocacao(Cliente cliente, int dia) throws FilmeLocadoException {
         if(clienteLocacao != null) {
-            System.out.println("Erro filme ja alocado");
+        	throw new FilmeLocadoException();
         }
         else {
             diaLocacao = dia;
@@ -35,39 +35,38 @@ public class Filme {
         }
     }
     
-    public void realizarDevolucao(int dia) {
+    public void realizarDevolucao(int dia) throws FilmeNaoLocadoException {
         if(clienteLocacao == null) {
-            System.out.println("Erro filme nao esta alocado");
+        	throw new FilmeNaoLocadoException();
         }
         else {
             diaDevolucao = dia;
             valorMulta = calcularValorMulta();
             valorLocacao = valorLocacao + valorMulta;
+            imprimirRelatorio();
         }
     }
     
     private double calcularValorMulta() {
+    	//Se o filme estiver locado e passou do dia de devolução previsto, calcular multa
         if((clienteLocacao != null) && (diaDevolucao > diaPrevistoDevolucao)) {
             return 2 * (diaDevolucao - diaPrevistoDevolucao);
         }
         return 0;
     }
     
-    public void imprimirRelatorio() {
+    private void imprimirRelatorio() {
+    	System.out.println("\nDADOS DO FILME:");
         System.out.println("Título do filme: " + titulo);
-        if(clienteLocacao == null) {
-            System.out.println("Filme locado: Não");
-        }
-        else {
-            System.out.println("Filme locado: Sim");
-            System.out.println("Nome do cliente que fez a locação: " + clienteLocacao.getNome());
-            System.out.println("Dia da locação: " + diaLocacao);
-            System.out.println("Dia previsto da devolução: " + diaPrevistoDevolucao);
-            System.out.println("Dia da devolução: " + diaDevolucao);
-            System.out.println("Preço do filme: " + preco);
-            System.out.println("Valor da multa: " + valorMulta);
-            System.out.println("Valor total da locação :" + valorLocacao);
-        }
+        System.out.println("Duração do filme: " + duracao);
+        System.out.println("\nDADOS DA LOCAÇÃO:");
+        System.out.println("Nome do cliente que fez a locação: " + clienteLocacao.getNome());
+        System.out.println("Dia da locação: " + diaLocacao);
+        System.out.println("Dia previsto da devolução: " + diaPrevistoDevolucao);
+        System.out.println("Dia da devolução: " + diaDevolucao);
+        System.out.println("\nVALORES:");
+        System.out.println("Preço do filme: " + preco);
+        System.out.println("Valor da multa: " + valorMulta);
+        System.out.println("Valor total da locação: " + valorLocacao);
     }
-    
 }

@@ -11,4 +11,16 @@ public class Cliente {
 		this.cpf = cpf;
 		this.conta = new Conta();
 	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public int getCpf() {
+		return cpf;
+	}
+
+	public Conta getConta() {
+		return conta;
+	}
 }
