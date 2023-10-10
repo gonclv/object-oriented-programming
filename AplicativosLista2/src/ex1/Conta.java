@@ -26,9 +26,9 @@ public class Conta {
 		System.out.println("Saldo da conta " + numeroConta + ": R$" + String.format("%.2f", saldo));
 	}
 	
-	public void sacar(double valor) {
+	public void sacar(double valor) throws SaldoException {
 		if(valor > saldo) {
-			System.out.println("Saldo disponível na conta " + numeroConta + " é insuficiente.");
+			throw new SaldoException();
 		}
 		else {
 			saldo -= valor;
