@@ -27,39 +27,67 @@ public class Banco {
 	}
 	
 	public void removerConta(int numeroConta) {
-		for(int i = 0; i < contas.size(); i++) {
-			if(contas.get(i).getNumeroConta() == numeroConta) {
-				contas.remove(i);
-				System.out.println("Conta " + numeroConta + " removida com sucesso.");
-				break;
+		try {
+			for(int i = 0; i < contas.size(); i++) {
+				if(contas.get(i).getNumeroConta() == numeroConta) {
+					contas.remove(i);
+					System.out.println("Conta " + numeroConta + " removida com sucesso.");
+					return;
+				}
 			}
+			
+			throw new ContaException();
+		}
+		catch (ContaException ce) {
+			System.out.println(ce.getMessage());
 		}
 	}
 	
 	public void verificarSaldo(int numeroConta) {
-		for(Conta conta : contas) {
-			if(conta.getNumeroConta() == numeroConta) {
-				conta.imprimirSaldo();
-				break;
+		try {
+			for(Conta conta : contas) {
+				if(conta.getNumeroConta() == numeroConta) {
+					conta.imprimirSaldo();
+					return;
+				}
 			}
+			
+			throw new ContaException();
+		}
+		catch (ContaException ce) {
+			System.out.println(ce.getMessage());
 		}
 	}
 
 	public void realizarSaque(int numeroConta, double valor) {
-		for(Conta conta : contas) {
-			if(conta.getNumeroConta() == numeroConta) {
-				conta.sacar(valor);
-				break;
+		try {
+			for(Conta conta : contas) {
+				if(conta.getNumeroConta() == numeroConta) {
+					conta.sacar(valor);
+					return;
+				}
 			}
+			
+			throw new ContaException();
+		}
+		catch (ContaException | SaldoException e) {
+			System.out.println(e.getMessage());
 		}
 	}
 	
 	public void realizarDeposito(int numeroConta, double valor) {
-		for(Conta conta : contas) {
-			if(conta.getNumeroConta() == numeroConta) {
-				conta.depositar(valor);
-				break;
+		try {
+			for(Conta conta : contas) {
+				if(conta.getNumeroConta() == numeroConta) {
+					conta.depositar(valor);
+					return;
+				}
 			}
+			
+			throw new ContaException();
+		}
+		catch (ContaException ce) {
+			System.out.println(ce.getMessage());
 		}
 	}
 }
